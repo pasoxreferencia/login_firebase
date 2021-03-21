@@ -8,11 +8,17 @@
     tools:context=".HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:context=".AuthActivity"/>
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".AuthActivity" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,20 +30,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/emailTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="40dp"
+            android:text="@string/email" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/providerTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="40dp"
+            android:text="@string/proveedor" />
 
         <Space
             android:layout_width="match_parent"
@@ -49,26 +55,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/signUpButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/registrarButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/azuloscurofirebase"
-                android:text="Registrar"
+                android:background="#FF5C00"
+                android:text="@string/cerrar_sesi_n"
                 android:textColor="@android:color/white" />
 
-            <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/azuloscurofirebase"
-                android:text="Entrar"
-                android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,8 +22,9 @@
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:autofillHints="" />
 
         <Space
             android:layout_width="match_parent"
@@ -34,8 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:hint="@string/contrase_a"
+            android:inputType="textPassword"
+            android:autofillHints="" />
 
         <Space
             android:layout_width="match_parent"
@@ -47,12 +49,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/signUpButton"
+                android:id="@+id/registrarButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/azuloscurofirebase"
-                android:text="Registrar"
+                android:text="@string/registrar"
                 android:textColor="@android:color/white" />
 
             <Space
@@ -65,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/azuloscurofirebase"
-                android:text="Entrar"
+                android:text="@string/entrar"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
