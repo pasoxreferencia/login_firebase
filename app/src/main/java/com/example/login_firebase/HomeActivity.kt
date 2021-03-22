@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.login_firebase.databinding.ActivityAuthBinding
 import com.example.login_firebase.databinding.ActivityHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 
 enum class ProviderType {
     BASIC
@@ -13,7 +14,8 @@ private lateinit var binding: ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Setup
         val bundle: Bundle? = intent.extras
@@ -27,5 +29,11 @@ class HomeActivity : AppCompatActivity() {
         title = "Inicio"
         binding.emailTextView.text = email
         binding.providerTextView.text = provider
+
+        binding.logOutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            onBackPressed()
+        }
+
     }
 }

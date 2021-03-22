@@ -11,7 +11,8 @@ private lateinit var binding: ActivityAuthBinding
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Setup
         setup()
@@ -33,6 +34,10 @@ class AuthActivity : AppCompatActivity() {
 
                         }
 
+
+                }
+            else {
+                showAlert2()
             }
 
         }
@@ -53,6 +58,10 @@ class AuthActivity : AppCompatActivity() {
 
             }
 
+            else {
+                showAlert2()
+            }
+
         }
     }
 
@@ -61,6 +70,16 @@ class AuthActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Se ha producido un error autenticando al usuario")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAlert2() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("No se han introducido datos")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
