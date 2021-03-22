@@ -2,10 +2,30 @@ package com.example.login_firebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.login_firebase.databinding.ActivityAuthBinding
+import com.example.login_firebase.databinding.ActivityHomeBinding
 
+enum class ProviderType {
+    BASIC
+    //SE SEGUIRÁN AÑADIENDO PROVEEDORES
+}
+private lateinit var binding: ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        //Setup
+        val bundle: Bundle? = intent.extras
+        val email: String? = bundle?.getString("email")
+        val provider: String? = bundle?.getString("provider")
+        setup(email = email?: "", provider = provider?: "")
+    }
+
+    private fun setup (email: String, provider: String){
+
+        title = "Inicio"
+        binding.emailTextView.text = email
+        binding.providerTextView.text = provider
     }
 }
