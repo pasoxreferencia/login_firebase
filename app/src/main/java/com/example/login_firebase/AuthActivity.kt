@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import com.example.login_firebase.databinding.ActivityAuthBinding
+import com.example.loginfirebase.databinding.ActivityAuthBinding
 import com.google.firebase.auth.FirebaseAuth
 
 private lateinit var binding: ActivityAuthBinding

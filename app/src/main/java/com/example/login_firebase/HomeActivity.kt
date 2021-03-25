@@ -2,8 +2,7 @@ package com.example.login_firebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.login_firebase.databinding.ActivityAuthBinding
-import com.example.login_firebase.databinding.ActivityHomeBinding
+import com.example.loginfirebase.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 
 enum class ProviderType {
@@ -32,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.logOutButton.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            onBackPressed() //vuelve a la activity anterior
         }
 
     }

@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login_Firebase">
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".AuthActivity">
+        <activity android:name="com.example.login_firebase.HomeActivity"></activity>
+        <activity android:name="com.example.login_firebase.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
