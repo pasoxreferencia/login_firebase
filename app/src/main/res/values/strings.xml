@@ -5,6 +5,6 @@
     <string name="email">Email</string>
     <string name="contrase_a">Contraseña</string>
     <string name="proveedor">Proveedor</string>
-    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="GUARDAR">Cerrar sesión</string>
 
 </resources>

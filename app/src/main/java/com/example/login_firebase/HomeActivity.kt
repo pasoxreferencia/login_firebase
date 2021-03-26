@@ -2,7 +2,7 @@ package com.example.login_firebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.loginfirebase.databinding.ActivityHomeBinding
+import com.example.login_firebase.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 
 enum class ProviderType {
