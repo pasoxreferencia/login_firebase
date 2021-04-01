@@ -8,6 +8,7 @@ import com.example.login_firebase.databinding.ActivityAuthBinding
 import com.google.firebase.auth.FirebaseAuth
 
 private lateinit var binding: ActivityAuthBinding
+
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +25,21 @@ class AuthActivity : AppCompatActivity() {
             if (binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()) {
 
                 FirebaseAuth.getInstance()
-                        .createUserWithEmailAndPassword(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString()).addOnCompleteListener {
+                    .createUserWithEmailAndPassword(
+                        binding.emailEditText.text.toString(),
+                        binding.passwordEditText.text.toString()
+                    ).addOnCompleteListener {
 
-                            if (it.isSuccessful) {
-                                showHome(it.result?.user?.email?: "", ProviderType.BASIC)
-                            } else {
-                                showAlert()
-                            }
-
+                        if (it.isSuccessful) {
+                            showHome(it.result?.user?.email?: "", ProviderType.BASIC)
+                        } else {
+                            showAlert()
                         }
 
+                    }
 
-                }
-            else {
+
+            } else {
                 showAlert2()
             }
 
@@ -46,19 +49,20 @@ class AuthActivity : AppCompatActivity() {
             if (binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()) {
 
                 FirebaseAuth.getInstance()
-                        .signInWithEmailAndPassword(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString()).addOnCompleteListener {
+                    .signInWithEmailAndPassword(
+                        binding.emailEditText.text.toString(),
+                        binding.passwordEditText.text.toString()
+                    ).addOnCompleteListener {
 
-                            if (it.isSuccessful) {
-                                showHome(it.result?.user?.email?: "", ProviderType.BASIC)
-                            } else {
-                                showAlert()
-                            }
-
+                        if (it.isSuccessful) {
+                            showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        } else {
+                            showAlert()
                         }
 
-            }
+                    }
 
-            else {
+            } else {
                 showAlert2()
             }
 
@@ -85,7 +89,7 @@ class AuthActivity : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun showHome (email: String, provider: ProviderType){
+    private fun showHome(email: String, provider: ProviderType) {
 
         val homeIntent = Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)

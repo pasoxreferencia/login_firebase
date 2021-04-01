@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/contrase_a"
+            android:hint="@string/contrase_a_m_nimo_6_d_gitos"
             android:inputType="textPassword"
             android:autofillHints="" />
 
@@ -50,12 +51,13 @@
 
             <Button
                 android:id="@+id/signUpButton"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/azuloscurofirebase"
+                android:background="@color/orangefirebase"
                 android:text="@string/registrar"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/black" />
 
             <Space
                 android:layout_width="8dp"
@@ -66,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/azuloscurofirebase"
+                android:background="@color/azulfirebase"
                 android:text="@string/entrar"
                 android:textColor="@android:color/white" />
         </LinearLayout>

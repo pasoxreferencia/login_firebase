@@ -3,8 +3,14 @@
     <string name="registrar">Registrar</string>
     <string name="entrar">Entrar</string>
     <string name="email">Email</string>
-    <string name="contrase_a">Contraseña</string>
+    <string name="contrase_a">Contraseña, mínimo 6 dígitos</string>
     <string name="proveedor">Proveedor</string>
-    <string name="GUARDAR">Cerrar sesión</string>
+    <string name="GUARDAR">Guardar</string>
+    <string name="contrase_a_m_nimo_6_d_gitos">Contraseña, mínimo 6 dígitos</string>
+    <string name="buscar">BUSCAR</string>
+    <string name="cita_1_hora_y_consulta">Cita: hora y consulta</string>
+    <string name="hospital">Hospital</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="borrar">BORRAR</string>
 
 </resources>
