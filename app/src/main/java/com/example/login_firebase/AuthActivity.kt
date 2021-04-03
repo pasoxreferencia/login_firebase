@@ -20,7 +20,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        title = "Autenticación"
+        title = "SIGNUP OR LOGIN "
         binding.signUpButton.setOnClickListener {
             if (binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()) {
 
