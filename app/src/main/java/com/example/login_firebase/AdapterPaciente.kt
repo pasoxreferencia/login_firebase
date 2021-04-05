@@ -8,7 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.recyclerkotlin.databinding.ContentItemBinding
+import com.example.login_firebase.databinding.ContentItemBinding
+
 
 private lateinit var binding: ContentItemBinding
 class AdapterPaciente(var list: ArrayList<Paciente>): RecyclerView.Adapter<AdapterPaciente.ViewHolder>() {

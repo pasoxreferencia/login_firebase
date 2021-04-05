@@ -51,13 +51,13 @@
 
             <Button
                 android:id="@+id/signUpButton"
-                style="@style/Widget.AppCompat.Button.Colored"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/orangefirebase"
+                android:backgroundTint="@android:color/holo_orange_dark"
                 android:text="@string/registrar"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <Space
                 android:layout_width="8dp"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/azulfirebase"
+                android:backgroundTint="@color/azulfirebase"
                 android:text="@string/entrar"
                 android:textColor="@android:color/white" />
         </LinearLayout>

@@ -2,19 +2,17 @@ package com.example.login_firebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerkotlin.databinding.ActivityMainBinding
+import com.example.login_firebase.databinding.ActivityAddBinding
 
-private lateinit var binding: ActivityMainBinding
+
+private lateinit var binding: ActivityAddBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val recyclerView: RecyclerView = binding.recycler
