@@ -13,5 +13,6 @@
     <string name="guardar">GUARDAR</string>
     <string name="borrar">BORRAR</string>
     <string name="add_members">ADD MEMBERS</string>
+    <string name="a_adir_pacientes">+AÑADIR PACIENTES</string>
 
 </resources>
