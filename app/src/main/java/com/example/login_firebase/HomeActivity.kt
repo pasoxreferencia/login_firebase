@@ -1,73 +1,57 @@
 package com.example.login_firebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.login_firebase.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-enum class ProviderType {
-    BASIC
-    //SE SEGUIRÁN AÑADIENDO PROVEEDORES
-}
 
 private lateinit var binding: ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
+
     private val db = FirebaseFirestore.getInstance() //instanciamos la base de datos
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        title = "Familiares"
+
         //Setup
         val bundle: Bundle? = intent.extras
         val email: String? = bundle?.getString("email")
         val provider: String? = bundle?.getString("provider")
-        setup(email = email ?: "", provider = provider ?: "")
-    }
 
-    private fun setup(email: String, provider: String) {
+        val recyclerView: RecyclerView = binding.recycler
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        val pacientes = ArrayList<Paciente>()
 
-        title = "Gestionar citas "
-        binding.emailTextView.text = email
-        //binding.providerTextView.text = provider SE PUEDE QUITAR??
+        pacientes.add(Paciente("Ayla", age = 0, R.drawable.foto1))
+        pacientes.add(Paciente("Martin", age = 5, R.drawable.foto2))
+        pacientes.add(Paciente("Belen", age = 39, R.drawable.foto3))
 
-        binding.logOutButton.setOnClickListener {
+        val adapter = AdapterPaciente(pacientes)
+
+        recyclerView.adapter = adapter
+
+        binding.addButton.setOnClickListener {
+            val addIntent = Intent(this, AddActivity::class.java)
+            startActivity(addIntent)
+
+        binding.scapeButton.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             onBackPressed() //vuelve a la activity anterior
-        }
 
-
-        binding.saveButton.setOnClickListener {
-            db.collection("users").document(email).set(
-                hashMapOf(
-                    "provider" to provider,
-                    "cita" to binding.adressTextView.text.toString(),
-                    "hospital" to binding.phoneTextView.text.toString(),
-                    "cita2" to binding.date2TextView.text.toString(),
-                    "hospital2" to binding.hospital2TextView.text.toString(),
-                    "cita3" to binding.date3TextView.text.toString(),
-                    "hospital3" to binding.hospital3TextView.text.toString()
-                )
-            )
-
-        }
-        binding.getButton.setOnClickListener {
-            db.collection("users").document(email).get().addOnSuccessListener {
-                binding.adressTextView.setText(it.get("cita") as String?)
-                binding.phoneTextView.setText(it.get("hospital") as String?)
-                binding.date2TextView.setText(it.get("cita2") as String?)
-                binding.hospital2TextView.setText(it.get("hospital2") as String?)
-                binding.date3TextView.setText(it.get("cita3") as String?)
-                binding.hospital3TextView.setText(it.get("hospital3") as String?)
             }
 
-        }
-        binding.deleteButton.setOnClickListener {
-            db.collection("users").document(email).delete()
         }
     }
 }
